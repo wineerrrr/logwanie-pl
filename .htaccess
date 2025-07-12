@@ -1,0 +1,8 @@
+# Use web.php as the default directory index
+DirectoryIndex web.php
+
+# Redirect all requests to web.php if the file or directory doesn't exist
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ web.php [QSA,L]
